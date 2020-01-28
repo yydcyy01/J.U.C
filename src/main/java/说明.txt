@@ -3,3 +3,8 @@ J.U.C. 使用 demo. 后续添加使用. 总结及笔记详情见 MD 笔记.
 说明 :
 log.xxxx() ; 没有报错, 是因为 IDEA 装了lomb 插件, 此插件可以省略许多测试冗余代码, 很简便, 推荐使用.
 
+com.mmall.concurrency.example.aqs:
+    FutureExample  : future.get()
+    FutureTaskExample :
+        和FutureExample.java 例子代码大致同. 不同在于 : futureTask.get(); future.get()  结果说明 futureTask.get() 不会被阻塞.  看源码得知: 可以接收多种类型()
+         {public FutureTask(Runnable runnable, V result)    | public FutureTask(Callable<V> callable) }
