@@ -5,6 +5,15 @@ log.xxxx() ; 没有报错, 是因为 IDEA 装了lomb 插件, 此插件可以省�
 
 com.mmall.concurrency.example.aqs:
     FutureExample  : future.get()
+
     FutureTaskExample :
         和FutureExample.java 例子代码大致同. 不同在于 : futureTask.get(); future.get()  结果说明 futureTask.get() 不会被阻塞.  看源码得知: 可以接收多种类型()
          {public FutureTask(Runnable runnable, V result)    | public FutureTask(Callable<V> callable) }
+
+    ForkJoinTaskExample :
+        Future<Integer> result = forkJoinPool.submit(ForkJoinTaskExample);
+        ForkJoinTaskExample 是 extends RecursiveTask<Integer> { 复写了 compute 方法.
+        大任务拆分成小任务.
+         *  工作中涉及不多, 算法思想.工作窃取算法: 大任务切分为小子任务. 为减少线程竞争, 把任务放在队列中.
+         *  局限性 : ①任务只能使用 fork , join 方法. ②不应执行 I/O 操作 ③  不能抛出检查异常
+         *  使用时看不懂多看这两个例子.
