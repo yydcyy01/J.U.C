@@ -17,3 +17,12 @@ com.mmall.concurrency.example.aqs:
          *  工作中涉及不多, 算法思想.工作窃取算法: 大任务切分为小子任务. 为减少线程竞争, 把任务放在队列中.
          *  局限性 : ①任务只能使用 fork , join 方法. ②不应执行 I/O 操作 ③  不能抛出检查异常
          *  使用时看不懂多看这两个例子.
+
+
+
+com.mmall.concurrency.example.threadPool
+        Executors.newCachedThreadPool
+        Executors.newFixedThreadPool
+        Executors.newScheduledThreadPool
+        Executors.newSingleThreadExecutor 四个例子分别对应Executors.newxxxx 使用.  说明描述过程和结果.
+        ❌ newScheduledThreadPool(10); 参数有疑问.见demo(3)

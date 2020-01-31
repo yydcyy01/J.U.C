@@ -8,17 +8,18 @@ import java.util.concurrent.Executors;
 /**
  * @author YYDCYY
  * @create 2020-02-01
- * Executors.newFixedThreadPool 演示
+ * ExecutorService = Executors.newSingleThreadExecutor();
+ * fori 生成 10 个executorService.execute(new Runnable() {...}) 线程
  * // 多态, Executors 生成对象不同.
- * 结果 按序进行
+ * 结果 按序0-9 线程输出
  */
 @Slf4j
-public class ThreadPoolExample2 {
+public class ThreadPoolExample4 {
     public static void main(String[] args) {
         /**
          * 放置 10 个任务,  
          */
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
         for (int i = 0; i < 10; i++) {
             final int index = i;
             executorService.execute(new Runnable() {
